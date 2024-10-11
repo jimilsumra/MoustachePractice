@@ -1,0 +1,242 @@
+{/*
+    <!--li className="preview-cart-item">
+        <div className="item-container">
+            <div className="preview-cart-img">
+                <img src={item.imageURL} />        
+            </div>
+            <div className="preview-cart-detail">
+                <h5>{ item.title }</h5>
+                <div className="item-detail"> 
+                    <span className="item-qty">{ item.qty }</span>&nbsp;x&nbsp;<span className="item-price">${ item.price }</span>
+                    <br /><br/>
+                    Size:<span className="item-size">{ item.size_id }</span>
+                </div>
+            </div>
+        </div>
+    </li-->
+    */}
+    <input className="form-radio" type="radio" value="1" id="radio_ractangle_1" name="variant" />
+    <label className="form-option" htmlFor="radio_ractangle_1">S</label>
+    <input className="form-radio" type="radio" value="2" id="radio_ractangle_2" name="variant" />
+    <label className="form-option" htmlFor="radio_ractangle_2">M</label>
+    <input className="form-radio" type="radio" value="3" id="radio_ractangle_3" name="variant" />
+    <label className="form-option" htmlFor="radio_ractangle_3">L</label>
+    {productInfo.sizeOptions.map((dd, index) => (
+        console.log(dd)
+    )
+    )}
+
+<div class="nav-item" style="border:1px solid yellow; ">
+    <div style="margin: 0px 10rem 0px 10rem;">
+        <a class="item-link" onclick="toggleCart()"><span style="float:right;">My Cart (<span id="cart_item_tot">4</span>)</span></a>
+        
+        <!--Cart Menu-->
+        <div class="cart-menu" style="display: none;">
+            <ul class="preview-cart" >
+                <li class="preview-cart-item">
+
+                    <div class="item-container">
+                        <div class="preview-cart-img">
+                            <img src="assets/images/t-shirt-gray.png" />        
+                        </div>
+                        <div class="preview-cart-detail">
+                            <h5>Classic Tea</h5>
+                            <div class="item-detail"> 
+                                <span class="item-qty">2</span>&nbsp;x&nbsp;<span class="item-price">$75.00</span>
+                                <br><br>
+                                Size:<span class="item-size">L</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="preview-cart-item">
+                    <div class="item-container">
+                        <div class="preview-cart-img">
+                            <img src="assets/images/t-shirt-gray.png" />        
+                        </div>
+                        <div class="preview-cart-detail">
+                            <h5>Classic Tea</h5>
+                            <div class="item-detail"> 
+                                <span class="item-qty">1</span>&nbsp;x&nbsp;<span class="item-price">$75.00</span>
+                                <br><br>
+                                Size:<span class="item-size">XL</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--End: Cart Menu-->
+
+    </div>
+    
+</div>
+
+
+
+ <!--div class="nav-item">
+            <div class="item">
+                <a class="item-link" onclick="toggleCart()">
+                    My Cart (<span id="cart_item_tot">4</span>)
+                </a>
+            </div>
+        </div-->
+
+
+
+
+   <!--Cart Menu>
+        <div class="cart-menu" style="display: none;">
+            <ul class="preview-cart" >
+                <li class="preview-cart-item">
+
+                    <div class="item-container">
+                        <div class="preview-cart-img">
+                            <img src="assets/images/t-shirt-gray.png" />        
+                        </div>
+                        <div class="preview-cart-detail">
+                            <h5>Classic Tea</h5>
+                            <div class="item-detail"> 
+                                <span class="item-qty">2</span>&nbsp;x&nbsp;<span class="item-price">$75.00</span>
+                                <br><br>
+                                Size:<span class="item-size">L</span>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="preview-cart-item">
+                    <div class="item-container">
+                        <div class="preview-cart-img">
+                            <img src="assets/images/t-shirt-gray.png" />        
+                        </div>
+                        <div class="preview-cart-detail">
+                            <h5>Classic Tea</h5>
+                            <div class="item-detail"> 
+                                <span class="item-qty">1</span>&nbsp;x&nbsp;<span class="item-price">$75.00</span>
+                                <br><br>
+                                Size:<span class="item-size">XL</span>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <End: Cart Menu-->     
+
+        <style>
+
+.cart-menu {
+    border:0px solid blue;
+    width: 20%;
+    border: 1px solid #D3D3D3;
+    width: 20%;
+    /*display:flex;*/
+    /*float:right;*/
+    margin-top: -10px;
+    left: 0%;
+    right:0%;
+    position: absolute;
+    /*margin-right: -50px;*/
+    background-color: #fff;
+
+}
+        </style>
+
+
+
+
+
+<!--ITEMs.jsx taking data from JSON file-->
+import React from 'react'
+import cartItems from '../cart.json'
+
+const Items = () => {
+    
+  return (
+    <ul className="preview-cart">
+        {cartItems.map((cartItem, index) => (
+            <li className="preview-cart-item" key={index}>        
+                <div className="item-container">
+                    <div className="preview-cart-img">
+                        <img src={cartItem.imageURL} />        
+                    </div>
+                    <div className="preview-cart-detail">
+                        <h5>{ cartItem.title }</h5>
+                        <div className="item-detail"> 
+                            <span className="item-qty">{ cartItem.qty }</span>&nbsp;x&nbsp;<span className="item-price">${ cartItem.price }</span>
+                            <br /><br/>
+                            Size:<span className="item-size">{ cartItem.size_id }</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+        )
+
+        )}
+    </ul>
+  )
+}
+
+export default Items
+
+
+
+
+localStorage.removeItem("Test");
+   // localStorage.removeItem(1);
+    //localStorage.removeItem('cartItem');
+    var storageLength = localStorage.length;
+    console.log("total: "+storageLength);
+    
+    
+    //var newData =  [JSON.stringify(newPurchase)];
+    //existData = existData.concat(newData);
+    //localStorage.setItem("Test", existData);
+    if(storageLength == 0) {
+      console.log('first....');
+      localStorage.setItem("Test", JSON.stringify(newPurchase));
+    } else {
+      
+      var items = JSON.parse(localStorage.getItem("Test"));
+      var testing = localStorage.getItem("Test");
+      console.log('testing');
+      console.log(testing);
+      var total_items = localStorage.length;
+      console.log("Existing data...");
+      console.log(items);
+
+      for(var i=0;i<total_items;i++) {
+        console.log(items[i]);
+      }
+
+      items = [items].concat(newPurchase);
+      console.log("concat...");
+      console.log(items);
+
+      localStorage.setItem("Test", JSON.stringify(items));
+      //fetch the feed data and check if productID and sizeOptID is same as new purchase values 
+      //if does then update with qty
+     
+    }
+    //console.clear();
+    
+    //console.log("After Add: "+localStorage.getItem(1));
+    
+   // var items = JSON.parse(localStorage.getItem("Test"));
+   console.log("coming here...");
+   var items = JSON.parse(localStorage.getItem("Test"));
+   console.log(items);
+
+
+   /*var items = JSON.parse(localStorage.getItem("cartItems"));
+                console.log(items);
+                var data = [JSON.stringify(items)].concat([JSON.stringify(newPurchase)]);
+                console.log("data");
+                console.log(data);*/
+                //localStorage.setItem("cartItems",data);
+
+
+                Size:<span className="item-size">{ cartItem.sizeOptID }
